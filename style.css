@@ -1,6 +1,8 @@
 :root{
   --primary-light:  #e2e1e1;
-  --secondary-light: #fafafa;;
+  --secondary-light: #fafafa;
+  --primary-green: #4caf50;
+  /* --primary-blue: rgb(9, 9, 247); */
   --hover-color: rgb(60, 60, 60);
   --primary-dark: #333;
   }
@@ -21,4 +23,42 @@ header{
 }
 .title{
   font-size: 64px;
+  color: var(--primary-green);
+}
+/* MAIN */
+main{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-top: 8rem;
+}
+.inputs{
+  background-color: rgb(193, 187, 187);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 235px;
+}
+
+button{
+  padding: 10px;
+  margin: 5px;
+  width: 100px;
+  cursor: pointer;
+  border: none;            
+  border-radius: 4px;  
+  background-color: #4caf50; 
+  color: white;     
+}
+input:nth-child(1){
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.inputs .range{
+margin: 40px;
+cursor: pointer;
+}
+.sizeCubes button{
+  width: 65px;
 }
