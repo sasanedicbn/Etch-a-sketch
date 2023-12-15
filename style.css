@@ -1,3 +1,9 @@
+:root{
+  --primary-light:  #e2e1e1;
+  --secondary-light: #fafafa;;
+  --hover-color: rgb(60, 60, 60);
+  --primary-dark: #333;
+  }
 *{
   padding: 0;
   margin: 0;
