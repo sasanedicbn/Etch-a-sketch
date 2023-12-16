@@ -39,6 +39,7 @@ main{
   flex-direction: column;
   width: 235px;
   margin-top: 8rem;
+  padding: 6px;
 }
 
 button{
@@ -66,8 +67,14 @@ input:nth-child(1){
   cursor: pointer;
 }
 .inputs .range{
-margin: 40px;
+margin-top: 6px;
+margin-bottom: 20px;
 cursor: pointer;
+}
+.value{
+  margin-top: 20px;
+  font-size: 20px;
+  color: var(--primary-dark);
 }
 .sizeCubes button{
   width: 95px;
