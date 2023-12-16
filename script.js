@@ -8,3 +8,9 @@ const rangeValue = document.querySelector(".value");
 const inputRange = document.querySelector(".range");
 const btnApplyRange = document.querySelector(".apply");
 const btnResetRange = document.querySelector(".reset");
+
+inputRange.addEventListener("input", function () {
+  const value = inputRange.value;
+  rangeValue.innerHTML = `${value}X${value}`;
+  console.log(value);
+});
