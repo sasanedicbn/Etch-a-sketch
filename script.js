@@ -14,11 +14,11 @@ inputRange.addEventListener("input", function () {
   rangeValue.innerHTML = `${value}X${value}`;
   createGridTemplate(value);
 });
-function createGridTemplate(el) {
-  container.style.gridTemplateColumns = `repeat(${el}, 1fr)`;
-  container.style.gridTemplateRows = `repeat(${el}, 1fr)`;
+function createGridTemplate(value) {
+  container.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${value}, 1fr)`;
 
-  let size = el * el;
+  let size = value * value;
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
     cube.style.backgroundColor = "red";
