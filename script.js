@@ -17,5 +17,11 @@ inputRange.addEventListener("input", function () {
 function createGridTemplate() {
   container.style.gridTemplateColumns = `repeat(16, 1fr)`;
   container.style.gridTemplateRows = `repeat(16, 1fr)`;
+
+  let size = el * el;
+  for (let i = 0; i < size; i++) {
+    let cube = document.createElement("div");
+    console.log(cube);
+  }
 }
 createGridTemplate(5);
