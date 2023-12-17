@@ -14,3 +14,8 @@ inputRange.addEventListener("input", function () {
   rangeValue.innerHTML = `${value}X${value}`;
   console.log(value);
 });
+function createGridTemplate() {
+  container.style.gridTemplateColumns = `repeat(16, 1fr)`;
+  container.style.gridTemplateRows = `repeat(16, 1fr)`;
+}
+createGridTemplate(5);
