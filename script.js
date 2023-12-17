@@ -21,7 +21,8 @@ function createGridTemplate() {
   let size = el * el;
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
-    console.log(cube);
+    cube.style.backgroundColor = "red";
+    container.appendChild(cube);
   }
 }
 createGridTemplate(5);
