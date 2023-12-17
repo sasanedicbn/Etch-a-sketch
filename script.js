@@ -24,4 +24,5 @@ function createGridTemplate(value) {
     cube.style.backgroundColor = "red";
     container.appendChild(cube);
   }
+  console.log(size);
 }
