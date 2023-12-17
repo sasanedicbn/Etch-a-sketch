@@ -2,7 +2,6 @@
   --primary-light:  #e2e1e1;
   --secondary-light: #fafafa;
   --primary-green: #4caf50;
-  /* --primary-blue: rgb(9, 9, 247); */
   --hover-color: rgb(60, 60, 60);
   --primary-dark: #333;
   }
@@ -66,6 +65,9 @@ input:nth-child(1){
   margin-bottom: 20px;
   cursor: pointer;
 }
+.sizeCubes button{
+  width: 95px;
+}
 .inputs .range{
 margin-top: 6px;
 margin-bottom: 20px;
@@ -75,9 +77,6 @@ cursor: pointer;
   margin-top: 20px;
   font-size: 20px;
   color: var(--primary-dark);
-}
-.sizeCubes button{
-  width: 95px;
 }
 .grid{
   display: grid;
