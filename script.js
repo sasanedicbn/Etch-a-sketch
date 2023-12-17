@@ -12,7 +12,7 @@ const btnResetRange = document.querySelector(".reset");
 inputRange.addEventListener("input", function () {
   const value = inputRange.value;
   rangeValue.innerHTML = `${value}X${value}`;
-  console.log(value);
+  createGridTemplate(value);
 });
 function createGridTemplate(el) {
   container.style.gridTemplateColumns = `repeat(${el}, 1fr)`;
@@ -25,4 +25,3 @@ function createGridTemplate(el) {
     container.appendChild(cube);
   }
 }
-createGridTemplate(5);
