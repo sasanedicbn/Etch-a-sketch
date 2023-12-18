@@ -69,3 +69,9 @@ function eraserColor(element) {
     });
   });
 }
+
+function clearColors(element) {
+  clear.addEventListener("click", function () {
+    element.style.backgroundColor = "white";
+  });
+}
