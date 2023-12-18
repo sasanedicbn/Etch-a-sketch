@@ -15,13 +15,16 @@ inputRange.addEventListener("input", function () {
   createGridTemplate(value);
 });
 function createGridTemplate(value) {
+  let cube = document.querySelectorAll(".newDiv");
+  cube.forEach((div) => div.remove());
+  console.log(cube);
   container.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${value}, 1fr)`;
 
   let size = value * value;
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
-    cube.style.backgroundColor = "red";
+    cube.classList.add("newDiv");
     container.appendChild(cube);
   }
   console.log(size);
