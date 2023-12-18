@@ -49,4 +49,5 @@ function getRandomColor(element) {
   const randomBlue = Math.floor(Math.random() * 256);
 
   const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+  element.addEventListener("mouseover", function () {});
 }
