@@ -31,6 +31,7 @@ function createGridTemplate(value) {
     container.appendChild(cube);
     getRandomColor(cube);
     colorModeFn(cube);
+    eraserColor(cube);
   }
   console.log(size);
 }
@@ -59,4 +60,8 @@ function getRandomColor(element) {
       element.style.backgroundColor = randomColor;
     });
   });
+}
+
+function eraserColor(element) {
+  eraser.addEventListener("click", function () {});
 }
