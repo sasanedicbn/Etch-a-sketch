@@ -32,6 +32,7 @@ function createGridTemplate(value) {
     getRandomColor(cube);
     colorModeFn(cube);
     eraserColor(cube);
+    clearColors(cube);
   }
   console.log(size);
 }
