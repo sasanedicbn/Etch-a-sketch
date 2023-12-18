@@ -27,6 +27,35 @@ function createGridTemplate(value) {
     cube.classList.add("newDiv");
     cube.style.border = "1px solid grey";
     container.appendChild(cube);
+    colorModeFn(cube);
+    // applayMode(cube);
   }
   console.log(size);
 }
+
+function colorModeFn(element) {
+  // const colorMode = document.querySelector(".colorMode");
+  const data = colorMode.dataset.mode;
+  console.log(data);
+
+  if (data === "colorMode") {
+    element.addEventListener("mouseover", function () {
+      element.style.backgroundColor = "black";
+    });
+  }
+}
+function RandomColor() {
+  console.log("radi");
+}
+
+// function applayMode(element) {
+//   console.log(element);
+//   switch (element) {
+//     case "colorMode":
+//       colorModeFn(element);
+//       break;
+//     case "RandomColor":
+//       RandomColor();
+//       break;
+//   }
+// }
