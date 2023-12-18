@@ -62,7 +62,7 @@ function getRandomColor(element) {
     });
   });
 }
-
+// THIS FUNCTION ERASER ONE BY ONE DIV
 function eraserColor(element) {
   eraser.addEventListener("click", function () {
     element.addEventListener("mouseover", function () {
@@ -70,7 +70,7 @@ function eraserColor(element) {
     });
   });
 }
-
+// THIS FUNCTION CLEAR ALL DIV ON CLICK
 function clearColors(element) {
   clear.addEventListener("click", function () {
     element.style.backgroundColor = "white";
