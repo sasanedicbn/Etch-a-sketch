@@ -47,4 +47,6 @@ function getRandomColor(element) {
   const randomRed = Math.floor(Math.random() * 256);
   const randomGreen = Math.floor(Math.random() * 256);
   const randomBlue = Math.floor(Math.random() * 256);
+
+  const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
 }
