@@ -28,13 +28,12 @@ function createGridTemplate(value) {
     cube.style.border = "1px solid grey";
     container.appendChild(cube);
     colorModeFn(cube);
-    // applayMode(cube);
+    getRandomColor(cube);
   }
   console.log(size);
 }
 
 function colorModeFn(element) {
-  // const colorMode = document.querySelector(".colorMode");
   const data = colorMode.dataset.mode;
   console.log(data);
 
@@ -44,18 +43,8 @@ function colorModeFn(element) {
     });
   }
 }
-function RandomColor() {
-  console.log("radi");
+function getRandomColor(element) {
+  const randomRed = Math.floor(Math.random() * 256);
+  const randomGreen = Math.floor(Math.random() * 256);
+  const randomBlue = Math.floor(Math.random() * 256);
 }
-
-// function applayMode(element) {
-//   console.log(element);
-//   switch (element) {
-//     case "colorMode":
-//       colorModeFn(element);
-//       break;
-//     case "RandomColor":
-//       RandomColor();
-//       break;
-//   }
-// }
