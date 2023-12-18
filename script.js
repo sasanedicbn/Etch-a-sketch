@@ -63,5 +63,7 @@ function getRandomColor(element) {
 }
 
 function eraserColor(element) {
-  eraser.addEventListener("click", function () {});
+  eraser.addEventListener("click", function () {
+    element.addEventListener("mouseover", function () {});
+  });
 }
