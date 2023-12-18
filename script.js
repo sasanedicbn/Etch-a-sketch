@@ -25,6 +25,7 @@ function createGridTemplate(value) {
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
     cube.classList.add("newDiv");
+    cube.style.border = "1px solid grey";
     container.appendChild(cube);
   }
   console.log(size);
