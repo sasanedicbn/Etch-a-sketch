@@ -36,23 +36,27 @@ function createGridTemplate(value) {
 }
 // THIS IS DEFAULT COLOR AND WHEN WE USE MOUSEOVER WE GET BLACK COLOUR
 function colorModeFn(element) {
-  const data = colorMode.dataset.mode;
-  console.log(data);
+  // const data = colorMode.dataset.mode;
+  // console.log(data);
 
-  if (data === "colorMode") {
+  // if (data === "colorMode") {
+  colorMode.addEventListener("click", function () {
     element.addEventListener("mouseover", function () {
       element.style.backgroundColor = "black";
     });
-  }
+  });
 }
+// }
 // THIS FUNCTION GIVE US RANDOM COLOR
 function getRandomColor(element) {
-  const randomRed = Math.floor(Math.random() * 256);
-  const randomGreen = Math.floor(Math.random() * 256);
-  const randomBlue = Math.floor(Math.random() * 256);
+  randomColor.addEventListener("click", function () {
+    const randomRed = Math.floor(Math.random() * 256);
+    const randomGreen = Math.floor(Math.random() * 256);
+    const randomBlue = Math.floor(Math.random() * 256);
 
-  const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-  element.addEventListener("mouseover", function () {
-    element.style.backgroundColor = randomColor;
+    const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+    element.addEventListener("mouseover", function () {
+      element.style.backgroundColor = randomColor;
+    });
   });
 }
