@@ -29,8 +29,8 @@ function createGridTemplate(value) {
     cube.classList.add("newDiv");
     cube.style.border = "1px solid grey";
     container.appendChild(cube);
-    colorModeFn(cube);
     getRandomColor(cube);
+    colorModeFn(cube);
   }
   console.log(size);
 }
