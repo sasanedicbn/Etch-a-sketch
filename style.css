@@ -65,9 +65,7 @@ input:nth-child(1){
   margin-bottom: 20px;
   cursor: pointer;
 }
-.sizeCubes button{
-  width: 95px;
-}
+
 .inputs .range{
 margin-top: 6px;
 margin-bottom: 20px;
