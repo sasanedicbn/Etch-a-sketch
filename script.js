@@ -6,8 +6,6 @@ const eraser = document.querySelector(".eraser");
 const clear = document.querySelector(".clear");
 const rangeValue = document.querySelector(".value");
 const inputRange = document.querySelector(".range");
-const btnApplyRange = document.querySelector(".apply");
-const btnResetRange = document.querySelector(".reset");
 
 // WITH THIS WE CAN RANGE INPUT DATA
 inputRange.addEventListener("input", function () {
