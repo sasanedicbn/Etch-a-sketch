@@ -6,6 +6,7 @@ const eraser = document.querySelector(".eraser");
 const clear = document.querySelector(".clear");
 const rangeValue = document.querySelector(".value");
 const inputRange = document.querySelector(".range");
+const colorPicker = document.querySelector(".colorPicker");
 
 // WITH THIS WE CAN RANGE INPUT DATA
 inputRange.addEventListener("input", function () {
@@ -31,6 +32,7 @@ function createGridTemplate(value) {
     colorModeFn(cube);
     eraserColor(cube);
     clearColors(cube);
+    // colorPickerFn(cube);
   }
   console.log(size);
 }
@@ -74,3 +76,8 @@ function clearColors(element) {
     element.style.backgroundColor = "white";
   });
 }
+
+// function colorPickerFn(element) {
+//   const valueColorPicker = colorPicker.value;
+//   element.style.backgroundColor = `${valueColorPicker}`;
+// }
