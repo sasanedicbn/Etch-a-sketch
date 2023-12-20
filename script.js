@@ -8,6 +8,7 @@ const rangeValue = document.querySelector(".value");
 const inputRange = document.querySelector(".range");
 const colorPicker = document.querySelector(".colorPicker");
 
+const cube = document.querySelectorAll(".newDiv");
 // WITH THIS WE CAN RANGE INPUT DATA
 inputRange.addEventListener("input", function () {
   const value = inputRange.value;
@@ -16,7 +17,6 @@ inputRange.addEventListener("input", function () {
 });
 // FUNCTION FOR CREATE DIV - FRIST DELETE (CLEAN OLD) AND PUT NEW DIV
 function createGridTemplate(value) {
-  let cube = document.querySelectorAll(".newDiv");
   cube.forEach((div) => div.remove());
   console.log(cube);
   container.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
@@ -28,6 +28,7 @@ function createGridTemplate(value) {
     cube.classList.add("newDiv");
     cube.style.border = "1px solid grey";
     container.appendChild(cube);
+    console.log("$");
     getRandomColor(cube);
     colorModeFn(cube);
     eraserColor(cube);
@@ -38,10 +39,6 @@ function createGridTemplate(value) {
 }
 // THIS IS DEFAULT COLOR AND WHEN WE USE MOUSEOVER WE GET BLACK COLOUR
 function colorModeFn(element) {
-  // const data = colorMode.dataset.mode;
-  // console.log(data);
-
-  // if (data === "colorMode") {
   colorMode.addEventListener("click", function () {
     element.addEventListener("mouseover", function () {
       element.style.backgroundColor = "black";
