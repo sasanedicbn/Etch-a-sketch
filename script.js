@@ -16,19 +16,18 @@ inputRange.addEventListener("input", function () {
   createGridTemplate(value);
 });
 
+function appendChild(el) {
+  el.style.border = "1px solid grey";
+  container.appendChild(el);
+}
+
 // FUNCTION FOR CREATE DIV - FRIST DELETE (CLEAN OLD) AND PUT NEW DIV
 function createGridTemplate(value) {
-  // cube.forEach((div) => div.remove());
+  cube.forEach((div) => div.remove());
   console.log(cube);
   container.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${value}, 1fr)`;
-  container.innerHTML = "";
 
-  function appendChild(el) {
-    el.classList.add("newDiv");
-    el.style.border = "1px solid grey";
-    container.appendChild(el);
-  }
   let size = value * value;
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
