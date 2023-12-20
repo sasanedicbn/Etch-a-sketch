@@ -23,10 +23,9 @@ function appendChild(el) {
 
 // FUNCTION FOR CREATE DIV - FRIST DELETE (CLEAN OLD) AND PUT NEW DIV
 function createGridTemplate(value) {
-  cube.forEach((div) => div.remove());
-  console.log(cube);
   container.style.gridTemplateColumns = `repeat(${value}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${value}, 1fr)`;
+  container.innerHTML = "";
 
   let size = value * value;
   for (let i = 0; i < size; i++) {
