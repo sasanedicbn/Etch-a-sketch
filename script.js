@@ -1,7 +1,7 @@
 const container = document.querySelector(".grid");
 const inputColorPicker = document.querySelector(".colorPicker");
 const colorMode = document.querySelector(".colorMode");
-const randomColor = document.querySelector(".randomColor");
+const randomColorBtn = document.querySelector(".randomColor");
 const eraser = document.querySelector(".eraser");
 const clear = document.querySelector(".clear");
 const rangeValue = document.querySelector(".value");
@@ -11,15 +11,16 @@ const colorPicker = document.querySelector(".colorPicker");
 const cube = document.querySelectorAll(".newDiv");
 // WITH THIS WE CAN RANGE INPUT DATA
 
-function createDom () {
-  let color = 'red'
-  const updateColor = (backgroundColor){
-    color = backgroundColor
+function createDom() {
+  let color = "red";
+  function updateColor(element, backgroundColors) {
+    element.style.backgroundColor = backgroundColors;
   }
-  return{
-  updateColor,
-  }
+  return {
+    updateColor,
+  };
 }
+const DOM = createDom();
 inputRange.addEventListener("input", function () {
   const value = inputRange.value;
   rangeValue.innerHTML = `${value}X${value}`;
@@ -41,7 +42,7 @@ function createGridTemplate(value) {
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
     appendChild(cube);
-  for (let m = 0; m < cube; m++) {
+    for (let m = 0; m < cube; m++) {
       let cube = document.createElement("div");
       appendChild(cube);
     }
@@ -65,14 +66,15 @@ function colorModeFn(element) {
 // }
 // THIS FUNCTION GIVE US RANDOM COLOR
 function getRandomColor(element) {
-  randomColor.addEventListener("click", function () {
+  randomColorBtn.addEventListener("click", function () {
     const randomRed = Math.floor(Math.random() * 256);
     const randomGreen = Math.floor(Math.random() * 256);
     const randomBlue = Math.floor(Math.random() * 256);
 
     const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
     element.addEventListener("mouseover", function () {
-      element.style.backgroundColor = randomColor;
+      // element.style.backgroundColor = randomColor;
+      DOM.updateColor(element, randomColor);
     });
   });
 }
