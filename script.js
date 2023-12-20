@@ -92,8 +92,3 @@ function clearColors(element) {
     element.style.backgroundColor = "white";
   });
 }
-
-// function colorPickerFn(element) {
-//   const valueColorPicker = colorPicker.value;
-//   element.style.backgroundColor = `${valueColorPicker}`;
-// }
