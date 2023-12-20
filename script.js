@@ -10,6 +10,16 @@ const colorPicker = document.querySelector(".colorPicker");
 
 const cube = document.querySelectorAll(".newDiv");
 // WITH THIS WE CAN RANGE INPUT DATA
+
+function createDom () {
+  let color = 'red'
+  const updateColor = (backgroundColor){
+    color = backgroundColor
+  }
+  return{
+  updateColor,
+  }
+}
 inputRange.addEventListener("input", function () {
   const value = inputRange.value;
   rangeValue.innerHTML = `${value}X${value}`;
@@ -31,11 +41,11 @@ function createGridTemplate(value) {
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
     appendChild(cube);
-    for (let m = 0; m < cube; m++) {
+  for (let m = 0; m < cube; m++) {
       let cube = document.createElement("div");
       appendChild(cube);
     }
-    console.log("$");
+
     getRandomColor(cube);
     colorModeFn(cube);
     eraserColor(cube);
