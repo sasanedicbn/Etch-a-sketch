@@ -58,7 +58,7 @@ function createGridTemplate(value) {
 function colorModeFn(element) {
   colorMode.addEventListener("click", function () {
     element.addEventListener("mouseover", function () {
-      element.style.backgroundColor = "black";
+      DOM.updateColor(element, "black");
     });
   });
 }
