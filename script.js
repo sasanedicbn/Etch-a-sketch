@@ -9,7 +9,6 @@ const inputRange = document.querySelector(".range");
 const colorPicker = document.querySelector(".colorPicker");
 
 const cube = document.querySelectorAll(".newDiv");
-// WITH THIS WE CAN RANGE INPUT DATA
 
 function createDom() {
   let color = "red";
