@@ -11,7 +11,6 @@ const colorPicker = document.querySelector(".colorPicker");
 const cube = document.querySelectorAll(".newDiv");
 
 function createDom() {
-  let color = "red";
   function updateColor(element, backgroundColors) {
     element.style.backgroundColor = backgroundColors;
   }
@@ -19,6 +18,8 @@ function createDom() {
     updateColor,
   };
 }
+// DEFAULT START
+createGridTemplate(2, 2);
 const DOM = createDom();
 inputRange.addEventListener("input", function () {
   const value = inputRange.value;
