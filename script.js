@@ -9,7 +9,6 @@ const inputRange = document.querySelector(".range");
 const colorPicker = document.querySelector(".colorPicker");
 
 const cube = document.querySelectorAll(".newDiv");
-
 function createDom() {
   function updateColor(element, backgroundColors) {
     element.style.backgroundColor = backgroundColors;
@@ -51,7 +50,6 @@ function createGridTemplate(value) {
     colorModeFn(cube);
     eraserColor(cube);
     clearColors(cube);
-    // colorPickerFn(cube);
   }
   console.log(size);
 }
@@ -63,7 +61,6 @@ function colorModeFn(element) {
     });
   });
 }
-// }
 // THIS FUNCTION GIVE US RANDOM COLOR
 function getRandomColor(element) {
   randomColorBtn.addEventListener("click", function () {
