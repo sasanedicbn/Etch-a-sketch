@@ -89,6 +89,6 @@ function eraserColor(element) {
 // THIS FUNCTION CLEAR ALL DIV ON CLICK
 function clearColors(element) {
   clear.addEventListener("click", function () {
-    element.style.backgroundColor = "white";
+    DOM.updateColor(element, "white");
   });
 }
