@@ -75,26 +75,23 @@ function createGridTemplate(value) {
   attachedMouseover();
 }
 // THIS IS DEFAULT COLOR AND WHEN WE USE MOUSEOVER WE GET BLACK COLOUR
-function colorModeFn(element) {
-  colorMode.addEventListener("click", function () {
-    element.addEventListener("mouseover", function () {
-      DOM.updateColor(element, "black");
-    });
-  });
-}
+
+colorMode.addEventListener("click", function () {
+  logic.setCurrentColor("black");
+});
+
 // THIS FUNCTION GIVE US RANDOM COLOR
-function getRandomColor(element) {
+function getRandomColor() {
   randomColorBtn.addEventListener("click", function () {
     const randomRed = Math.floor(Math.random() * 256);
     const randomGreen = Math.floor(Math.random() * 256);
     const randomBlue = Math.floor(Math.random() * 256);
 
     const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-    element.addEventListener("mouseover", function () {
-      DOM.updateColor(element, randomColor);
-    });
+    logic.setCurrentColor(randomColor);
   });
 }
+getRandomColor();
 // THIS FUNCTION ERASER ONE BY ONE DIV
 
 eraser.addEventListener("click", function () {
