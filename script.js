@@ -15,24 +15,29 @@ function logicGame() {
   const setCurrentColor = (color) => {
     currentColor = color;
   };
+  const deleteAllElements = (elements, color) => {
+    currentColor = color;
+    elements.style.backgroundColor = currentColor;
+  };
   return {
     getCurrentColor,
     setCurrentColor,
+    deleteAllElements,
   };
 }
 const logic = logicGame();
 
 cube.innerHTML = logic.getCurrentColor();
 // getter i setter
-function createDom() {
-  function updateColor(element, backgroundColors) {
-    element.style.backgroundColor = backgroundColors;
-  }
-  return {
-    updateColor,
-  };
-}
-const DOM = createDom();
+// function createDom() {
+//   function updateColor(element, backgroundColors) {
+//     element.style.backgroundColor = backgroundColors;
+//   }
+//   return {
+//     updateColor,
+//   };
+// }
+// const DOM = createDom();
 // DEFAULT START
 createGridTemplate(2, 2);
 
@@ -98,8 +103,12 @@ eraser.addEventListener("click", function () {
   logic.setCurrentColor("white");
 });
 // THIS FUNCTION CLEAR ALL DIV ON CLICK
-function clearColors(element) {
-  clear.addEventListener("click", function () {
-    DOM.updateColor(element, "white");
+
+clear.addEventListener("click", function () {
+  const gridELements = document.querySelectorAll(".sasa");
+
+  gridELements.forEach((el) => {
+    logic.deleteAllElements(el, "white");
   });
-}
+  // logic.setCurrentColor("white");
+});
