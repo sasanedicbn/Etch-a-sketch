@@ -97,7 +97,9 @@ function getRandomColor(element) {
 }
 // THIS FUNCTION ERASER ONE BY ONE DIV
 
-eraser.addEventListener("click", function () {});
+eraser.addEventListener("click", function () {
+  logic.setCurrentColor("white");
+});
 // THIS FUNCTION CLEAR ALL DIV ON CLICK
 function clearColors(element) {
   clear.addEventListener("click", function () {
