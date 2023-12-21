@@ -9,6 +9,21 @@ const inputRange = document.querySelector(".range");
 const colorPicker = document.querySelector(".colorPicker");
 
 const cube = document.querySelectorAll(".newDiv");
+function logicGame() {
+  let currentColor = "red";
+  const getCurrentColor = () => currentColor;
+  const setCurrentColor = (color) => {
+    currentColor = color;
+  };
+  return {
+    getCurrentColor,
+    setCurrentColor,
+  };
+}
+const logic = logicGame();
+
+cube.innerHTML = logic.getCurrentColor();
+// getter i setter
 function createDom() {
   function updateColor(element, backgroundColors) {
     element.style.backgroundColor = backgroundColors;
@@ -17,9 +32,10 @@ function createDom() {
     updateColor,
   };
 }
+const DOM = createDom();
 // DEFAULT START
 createGridTemplate(2, 2);
-const DOM = createDom();
+
 inputRange.addEventListener("input", function () {
   const value = inputRange.value;
   rangeValue.innerHTML = `${value}X${value}`;
@@ -40,18 +56,23 @@ function createGridTemplate(value) {
   let size = value * value;
   for (let i = 0; i < size; i++) {
     let cube = document.createElement("div");
+    cube.classList.add("sasa");
     appendChild(cube);
     for (let m = 0; m < cube; m++) {
       let cube = document.createElement("div");
+      cube.classList.add("sasa");
       appendChild(cube);
     }
-
-    getRandomColor(cube);
-    colorModeFn(cube);
-    eraserColor(cube);
-    clearColors(cube);
+    function attachedMouseover() {
+      const newClass = document.querySelectorAll(".sasa");
+      newClass.forEach((el) => {
+        el.addEventListener("mouseover", function () {
+          el.style.backgroundColor = logic.getCurrentColor();
+        });
+      });
+    }
   }
-  console.log(size);
+  attachedMouseover();
 }
 // THIS IS DEFAULT COLOR AND WHEN WE USE MOUSEOVER WE GET BLACK COLOUR
 function colorModeFn(element) {
@@ -70,20 +91,13 @@ function getRandomColor(element) {
 
     const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
     element.addEventListener("mouseover", function () {
-      // element.style.backgroundColor = randomColor;
       DOM.updateColor(element, randomColor);
     });
   });
 }
 // THIS FUNCTION ERASER ONE BY ONE DIV
-function eraserColor(element) {
-  eraser.addEventListener("click", function () {
-    element.addEventListener("mouseover", function () {
-      element.style.backgroundColor = "white";
-      DOM.updateColor(element, "white");
-    });
-  });
-}
+
+eraser.addEventListener("click", function () {});
 // THIS FUNCTION CLEAR ALL DIV ON CLICK
 function clearColors(element) {
   clear.addEventListener("click", function () {
