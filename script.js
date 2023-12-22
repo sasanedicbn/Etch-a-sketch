@@ -67,6 +67,7 @@ function createGridTemplate(value) {
       });
     }
   }
+
   attachedMouseover();
 }
 // THIS IS DEFAULT COLOR AND WHEN WE USE MOUSEOVER WE GET BLACK COLOUR
@@ -79,21 +80,24 @@ function getRandomColor() {
   const randomGreen = Math.floor(Math.random() * 256);
   const randomBlue = Math.floor(Math.random() * 256);
 
-  return `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-}
-function sasaRandom() {
+  const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
   const newClass = document.querySelectorAll(".sasa");
   newClass.forEach((el) => {
-    el.addEventListener("mouseover", function () {
-      const randomColor = getRandomColor();
-      // el.style.backgroundColor = logic.setCurrentColor(randomColor);
-      logic.setCurrentColor(randomColor);
-      el.style.backgroundColor = logic.getCurrentColor();
-    });
+    logic.setCurrentColor(randomColor);
+    // el.style.backgroundColor = logic.getCurrentColor();
   });
 }
-getRandomColor();
-sasaRandom();
+// function sasaRandom() {
+//   const newClass = document.querySelectorAll(".sasa");
+//   newClass.forEach((el) => {
+//     const randomColor = getRandomColor();
+//     // el.style.backgroundColor = logic.setCurrentColor(randomColor);
+//     logic.setCurrentColor(randomColor);
+//     el.style.backgroundColor = logic.getCurrentColor();
+//   });
+// }
+
+// sasaRandom();
 // THIS FUNCTION ERASER ONE BY ONE DIV
 eraser.addEventListener("click", function () {
   logic.setCurrentColor("white");
@@ -106,3 +110,26 @@ clear.addEventListener("click", function () {
     logic.deleteAllElements(el, "white");
   });
 });
+
+// ... (prethodni kod)
+
+colorPicker.addEventListener("change", function () {
+  const pickedColor = colorPicker.value;
+  pickColor(pickedColor);
+});
+
+function pickColor(color) {
+  logic.setCurrentColor(color);
+}
+
+function attachedMouseover() {
+  const newClass = document.querySelectorAll(".sasa");
+  newClass.forEach((el) => {
+    el.addEventListener("mouseover", function () {
+      const currentColor = logic.getCurrentColor();
+      el.style.backgroundColor = currentColor;
+    });
+  });
+}
+
+attachedMouseover();
