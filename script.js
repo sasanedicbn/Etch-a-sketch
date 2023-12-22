@@ -31,7 +31,6 @@ function logicGame() {
 const logic = logicGame();
 
 cube.innerHTML = logic.getCurrentColor();
-// getter i setter
 createGridTemplate(2, 2);
 newClass.forEach((el) => {
   el.addEventListener("mouseover", function () {
@@ -110,6 +109,7 @@ clear.addEventListener("click", function () {
   });
 });
 
+// THIS CODE PICK VALUE FROM TYPE OF COLOR
 colorPicker.addEventListener("input", function () {
   const pickedColor = colorPicker.value;
   pickColor(pickedColor);
