@@ -7,8 +7,11 @@ const clear = document.querySelector(".clear");
 const rangeValue = document.querySelector(".value");
 const inputRange = document.querySelector(".range");
 const colorPicker = document.querySelector(".colorPicker");
+const newClass = document.querySelectorAll(".sasa");
 
 const cube = document.querySelectorAll(".newDiv");
+let intervalId;
+
 function logicGame() {
   let currentColor = "red";
   const getCurrentColor = () => currentColor;
@@ -30,6 +33,11 @@ const logic = logicGame();
 cube.innerHTML = logic.getCurrentColor();
 // getter i setter
 createGridTemplate(2, 2);
+newClass.forEach((el) => {
+  el.addEventListener("mouseover", function () {
+    el.style.backgroundColor = logic.getCurrentColor();
+  });
+});
 
 inputRange.addEventListener("input", function () {
   const value = inputRange.value;
@@ -75,31 +83,22 @@ colorMode.addEventListener("click", function () {
   logic.setCurrentColor("black");
 });
 // THIS FUNCTION GIVE US RANDOM COLOR
-function getRandomColor() {
-  const randomRed = Math.floor(Math.random() * 256);
-  const randomGreen = Math.floor(Math.random() * 256);
-  const randomBlue = Math.floor(Math.random() * 256);
+randomColorBtn.addEventListener("click", function () {
+  clearInterval(intervalId);
+  const getRandomColor = () => {
+    const randomRed = Math.floor(Math.random() * 256);
+    const randomGreen = Math.floor(Math.random() * 256);
+    const randomBlue = Math.floor(Math.random() * 256);
 
-  const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-  const newClass = document.querySelectorAll(".sasa");
-  newClass.forEach((el) => {
-    logic.setCurrentColor(randomColor);
-    // el.style.backgroundColor = logic.getCurrentColor();
-  });
-}
-// function sasaRandom() {
-//   const newClass = document.querySelectorAll(".sasa");
-//   newClass.forEach((el) => {
-//     const randomColor = getRandomColor();
-//     // el.style.backgroundColor = logic.setCurrentColor(randomColor);
-//     logic.setCurrentColor(randomColor);
-//     el.style.backgroundColor = logic.getCurrentColor();
-//   });
-// }
+    const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+    return randomColor;
+  };
+  intervalId = setInterval(() => logic.setCurrentColor(getRandomColor()), 10);
+});
 
-// sasaRandom();
 // THIS FUNCTION ERASER ONE BY ONE DIV
 eraser.addEventListener("click", function () {
+  clearInterval(intervalId);
   logic.setCurrentColor("white");
 });
 // THIS FUNCTION CLEAR ALL DIV ON CLICK
@@ -111,9 +110,7 @@ clear.addEventListener("click", function () {
   });
 });
 
-// ... (prethodni kod)
-
-colorPicker.addEventListener("change", function () {
+colorPicker.addEventListener("input", function () {
   const pickedColor = colorPicker.value;
   pickColor(pickedColor);
 });
