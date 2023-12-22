@@ -29,16 +29,6 @@ const logic = logicGame();
 
 cube.innerHTML = logic.getCurrentColor();
 // getter i setter
-// function createDom() {
-//   function updateColor(element, backgroundColors) {
-//     element.style.backgroundColor = backgroundColors;
-//   }
-//   return {
-//     updateColor,
-//   };
-// }
-// const DOM = createDom();
-// DEFAULT START
 createGridTemplate(2, 2);
 
 inputRange.addEventListener("input", function () {
@@ -80,25 +70,31 @@ function createGridTemplate(value) {
   attachedMouseover();
 }
 // THIS IS DEFAULT COLOR AND WHEN WE USE MOUSEOVER WE GET BLACK COLOUR
-
 colorMode.addEventListener("click", function () {
   logic.setCurrentColor("black");
 });
-
 // THIS FUNCTION GIVE US RANDOM COLOR
 function getRandomColor() {
-  randomColorBtn.addEventListener("click", function () {
-    const randomRed = Math.floor(Math.random() * 256);
-    const randomGreen = Math.floor(Math.random() * 256);
-    const randomBlue = Math.floor(Math.random() * 256);
+  const randomRed = Math.floor(Math.random() * 256);
+  const randomGreen = Math.floor(Math.random() * 256);
+  const randomBlue = Math.floor(Math.random() * 256);
 
-    const randomColor = `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
-    logic.setCurrentColor(randomColor);
+  return `rgb(${randomRed}, ${randomGreen}, ${randomBlue})`;
+}
+function sasaRandom() {
+  const newClass = document.querySelectorAll(".sasa");
+  newClass.forEach((el) => {
+    el.addEventListener("mouseover", function () {
+      const randomColor = getRandomColor();
+      // el.style.backgroundColor = logic.setCurrentColor(randomColor);
+      logic.setCurrentColor(randomColor);
+      el.style.backgroundColor = logic.getCurrentColor();
+    });
   });
 }
 getRandomColor();
+sasaRandom();
 // THIS FUNCTION ERASER ONE BY ONE DIV
-
 eraser.addEventListener("click", function () {
   logic.setCurrentColor("white");
 });
@@ -106,9 +102,7 @@ eraser.addEventListener("click", function () {
 
 clear.addEventListener("click", function () {
   const gridELements = document.querySelectorAll(".sasa");
-
   gridELements.forEach((el) => {
     logic.deleteAllElements(el, "white");
   });
-  // logic.setCurrentColor("white");
 });
